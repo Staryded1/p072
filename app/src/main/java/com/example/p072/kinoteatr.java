@@ -174,7 +174,7 @@ public class kinoteatr extends AppCompatActivity{
                 };
                 String[] p =(String[]) getItem(position);
                 ((TextView) view.findViewById(R.id.tvText)) .setText(p[0]);
-                ((TextView) view.findViewById(R.id.tvText1)) .setText(p[1]);
+                ((TextView) view.findViewById(R.id.tvText3)) .setText(p[1]);
                 return view;
             };
     }

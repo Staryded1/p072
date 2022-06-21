@@ -41,7 +41,7 @@ class newfilm extends AppCompatActivity {
     newfilm.MyTask mt;
     newfilm.MyTaskN mtn;
     newfilm.MyTaskTF mttf;
-    ListView lvMain;
+   ListView lvMain;
     //    String ID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ class newfilm extends AppCompatActivity {
         tvName = (EditText) findViewById(R.id.editTextTextPersonName);
         lvMain = (ListView) findViewById(R.id.lvMain);
         lvMain.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        mt = new MyTask();
+        mt = new newfilm.MyTask();
         mt.execute();
 
     }
@@ -76,7 +76,7 @@ class newfilm extends AppCompatActivity {
                 e.printStackTrace();
             }
             myConnection.setRequestProperty("Accept",
-                    "application/vnd.github.v3+kinoo");
+                    "application/vnd.github.v3+json");
             myConnection.setRequestProperty("Contact-Me",
                     "hathibelagal@example.com");
             try {
@@ -86,7 +86,7 @@ class newfilm extends AppCompatActivity {
             }
             myConnection.setDoOutput(true);
             try {
-                myConnection.getOutputStream().write( ("id=3&kinoteatrID=" + params[0]+"&filmID="+params[1]).getBytes());
+                myConnection.getOutputStream().write( ("id=3&IDteatr=" + params[0]+"&IDfilms="+params[1]).getBytes());
             } catch (IOException e) {
                 e.printStackTrace();
             };
@@ -207,7 +207,7 @@ class newfilm extends AppCompatActivity {
             ArrayList<String[]> res = new ArrayList<>();
             HttpURLConnection myConnection = null;
             try {
-                URL githubEndpoint = new URL("http://10.0.2.2:8080/kinoo?id=3");
+                URL githubEndpoint = new URL("http://localhost:8080/kinoo?ID=3");
                 myConnection =
                         (HttpURLConnection) githubEndpoint.openConnection();
             } catch (MalformedURLException e) {

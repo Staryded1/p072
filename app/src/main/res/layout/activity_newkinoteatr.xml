@@ -1,53 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/logo"
     android:orientation="vertical">
+
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/app_name"
         android:inputType="textPersonName"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/white"
-        android:hint="Введите название кафе"
-        android:textAlignment="center"
-        android:textColorHint="@color/white"
         android:text="" />
+
     <EditText
         android:id="@+id/editTextTextPersonAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/poisk"
         android:inputType="textPersonName"
-        android:hint="Введите адрес кафе"
-        android:textAlignment="center"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/white"
+        android:minHeight="48dp"
         android:text="" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="@color/buttons"
         android:onClick="onclick"
-        android:text="@string/start"></Button>
-
-    <!-->
+        android:text="@string/start">
+    </Button>
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     </ProgressBar>
-    <-->
     <TextView
         android:id="@+id/tvInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="">
     </TextView>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/________ve_125816698" />
+
 </LinearLayout>

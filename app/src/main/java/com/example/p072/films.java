@@ -141,9 +141,8 @@ public class films extends AppCompatActivity {
         @Override
         protected void onPostExecute(ArrayList<String[]> result) {
             super.onPostExecute(result);
-            newfilm.ClAdapter clAdapter=new newfilm(tvInfo.getContext(),result);
-//            lvMain = (ListView) findViewById(R.id.lvMain);
-            lvMain.setAdapter(clAdapter);
+
+//
             tvInfo.setText("End");
 
 
@@ -185,9 +184,7 @@ public class films extends AppCompatActivity {
             ((TextView) view.findViewById(R.id.tvText)).setText(p[0]);
             ((TextView) view.findViewById(R.id.tvText)).setText(p[1]);
             return view;
-        }
-
-        ;
+        };
 
     }
 }

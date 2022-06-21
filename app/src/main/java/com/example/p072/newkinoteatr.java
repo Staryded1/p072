@@ -2,7 +2,6 @@ package com.example.p072;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -16,23 +15,28 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class newtheatre extends AppCompatActivity {
+public class newkinoteatr extends AppCompatActivity {
     TextView tvInfo;
     EditText tvName;
     EditText tvAddress;
-    newtheatre.MyTask mt;
+    newkinoteatr mt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newkinoteatr);
         tvInfo = (TextView) findViewById(R.id.tvInfo);
         tvName = (EditText) findViewById(R.id.editTextTextPersonName);
-        tvAddress = (EditText) findViewById(R.id.editTextTextPersonAddress);
+        tvAddress =(EditText) findViewById(R.id.editTextTextPersonAddress);
+
     }
     public void onclick(View v) {
-        mt = new newtheatre.MyTask();
+        mt = new newkinoteatr();
         mt.execute(tvName.getText().toString(),tvAddress.getText().toString());
     }
+
+    private void execute(String toString, String toString1) {
+    }
+
     class MyTask extends AsyncTask<String, Void, Void> {
         @Override
         protected void onPreExecute() {
@@ -43,7 +47,7 @@ public class newtheatre extends AppCompatActivity {
         protected Void doInBackground(String... params) {
             HttpURLConnection myConnection=null;
             try {
-                URL githubEndpoint = new URL("http://10.0.2.2:8080/json/");
+                URL githubEndpoint = new URL("http://localhost:8080/kinoo/");
                 myConnection =
                         (HttpURLConnection) githubEndpoint.openConnection();
             } catch (MalformedURLException e) {
@@ -53,7 +57,7 @@ public class newtheatre extends AppCompatActivity {
             }
             myConnection.setDoOutput(true);
             try {
-                myConnection.getOutputStream().write( ("id=1&name=" + params[0]+"&address="+params[1]).getBytes());
+                myConnection.getOutputStream().write( ("id=1&nazvanie=" + params[0]+"&adres="+params[1]).getBytes());
             } catch (IOException e) {
                 e.printStackTrace();
             };
@@ -75,3 +79,4 @@ public class newtheatre extends AppCompatActivity {
         }
     }
 }
+
